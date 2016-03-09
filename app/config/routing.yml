@@ -1,0 +1,8 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+share:
+    resource: "@ShareBundle/Resources/config/routing.yml"
+    prefix:   /
+

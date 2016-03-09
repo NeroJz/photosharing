@@ -1,0 +1,73 @@
+{% extends '::layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('vendor/fancyBox/source/jquery.fancybox.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="photo-container">
+                <li class="photo-list">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="{{ asset(album.webPath) }}" class="fancybox photo thumbnail" rel="gallery"
+                               title="{{ album.name }}">
+                                <img src="{{ asset(album.webPath) }}"/>
+                            </a>
+                        </div>
+                        <div class="col-md-9">
+                            <p>
+                                {{ album.description }}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        {{ form_start(form,{'attr': {
+            "class" : "form-inline"
+        }}) }}
+        <div class="form-group">
+            {{ form_errors(form.multiphotos) }}
+            {{ form_widget(form.multiphotos, {
+                'attr' : {
+                    'class' : 'form-control',
+                },
+                'full_name' : "files[]"
+            }) }}
+        </div>
+        <button type="submit" class="btn btn-success">Upload</button>
+        {{ form_end(form) }}
+    </div>
+    <br>
+    <div class="row">
+        {% if album.photos is defined %}
+            {% for photo in album.photos %}
+                <div class="col-md-4">
+                    <a href="{{ asset(photo.webPath) }}" class="fancybox photo thumbnail" rel="gallery"
+                       title="{{ photo.name }}">
+                        <img src="{{ asset(photo.webPath) }}"/>
+                    </a>
+                    <a href="{{ path('delete_photo', {'album' : album.id, 'photo' : photo.id}) }}"
+                       class="btn btn-sm btn-danger btn-fab btn-delete glyphicon glyphicon-remove"></a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('vendor/fancyBox/source/jquery.fancybox.js') }}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.fancybox').fancybox();
+        })
+    </script>
+
+{% endblock %}

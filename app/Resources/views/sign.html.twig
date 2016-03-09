@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block title %}
+        <title>Signin Template for Bootstrap</title>
+    {% endblock %}
+
+    <!-- Custom styles for this template -->
+    <!-- Bootstrap core CSS -->
+    {% block stylesheets %}
+        <link href="{{ asset('vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/sign.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+
+<div class="container">
+    {% block body %}
+
+    {% endblock %}
+</div>
+<!-- /container -->
+
+{% block javascripts %}
+    <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>

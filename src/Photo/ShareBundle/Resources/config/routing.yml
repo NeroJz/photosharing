@@ -1,0 +1,27 @@
+share_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ShareBundle:Default:index }
+
+photo_home:
+    path: /
+    defaults: { _controller: ShareBundle:Photo:index }
+
+galleries:
+    path: /galleries/{album}
+    defaults: { _controller: ShareBundle:Photo:showGalleries, album:1 }
+
+dashboard:
+    path: /dashboard
+    defaults: { _controller: ShareBundle:Dashboard:index }
+
+upload:
+    path: /upload/{album}
+    defaults: { _controller: ShareBundle:Dashboard:uploadPhoto }
+
+delete:
+    path: /delete/{album}
+    defaults: { _controller: ShareBundle:Dashboard:deleteAlbum }
+
+delete_photo:
+    path: /delete-photo/{album}/{photo}
+    defaults: { _controller: ShareBundle:Dashboard:deletePhoto }

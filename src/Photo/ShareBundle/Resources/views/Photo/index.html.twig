@@ -1,0 +1,28 @@
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            {% if albums is defined %}
+                <ul class="photo-container">
+                    {% for album in albums %}
+                        <li class="photo-list">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="{{ path('galleries', {'album' : album.id}) }}">
+                                        <img class="photo thumbnail" src="{{ asset(album.webPath) }}">
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <p>
+                                        {{ album.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

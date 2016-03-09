@@ -1,0 +1,22 @@
+{
+  "name": "share-photo",
+  "authors": [
+    "KumHoe Lau <nerojz86@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "fancyBox": "^2.1.5"
+  }
+}
