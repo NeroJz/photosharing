@@ -1,7 +1,7 @@
 <h3>Photoshare</h3>
 
 <p>
-    A simple photosharing application that developed with Symfony 2.4.<br>
+    A simple photosharing application that was developed with Symfony 2.4.<br>
     Please run composer install to download all dependecies. <br/>
     Run schema-update to update the database and don't forget
     to change your credentials before you run the update. <br>
